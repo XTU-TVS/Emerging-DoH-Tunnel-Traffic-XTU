@@ -18,13 +18,15 @@
 
 # Network connections and capturing point
 
-![network](https://github.com/XTU-TunnelVision/XTU-DoHET-2024/raw/870ffe6b842171457b8cdf72c1e3ef3b5d676cac/NetFlow.drawio.png)
+![network](https://github.com/XTU-TunnelVision/XTU-DoHET-2024/raw/master/NetFlow.png)
 
-- The destination of all tunnel tools is a suspicious DNS server.
+-All tunnel tools ultimately connect to a suspicious DNS server.
 
-- The dnstt,godoh and DNSExfiltrator directly connects to a DoH server because it supports a DoH protocol.
+-dnstt, godoh, and DNSExfiltrator establish direct connections to a DoH server as they natively support the DoH protocol.
 
-- On the other hand, the tcp-over-dns and tuns use DoH proxy to convert conventional DNS into DoH.
+-Meanwhile, tcp-over-dns and tuns rely on a DoH proxy to convert conventional DNS traffic into DoH.
+
+-We use CoreDNS<sup>[8]</sup> with the dnsredir<sup>[9]</sup> plugin as a UDP DNS to DoH proxy.
 
 # References
 
@@ -35,3 +37,5 @@
 - [5] DNSExfiltrator https://github.com/Arno0x/DNSExfiltrator
 - [6] DoHlyzer https://github.com/ahlashkari/DOHlyzer
 - [7] pcapSpliter https://github.com/RongDuJiKsp/pcapSpliter
+- [8] CoreDNS https://github.com/coredns/coredns
+- [9] dnsredir https://github.com/leiless/dnsredir
