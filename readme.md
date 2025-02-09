@@ -18,6 +18,14 @@
 
 # Network connections and capturing point
 
+![network](https://github.com/XTU-TunnelVision/XTU-DoHET-2024/raw/870ffe6b842171457b8cdf72c1e3ef3b5d676cac/NetFlow.drawio.png)
+
+- The destination of all tunnel tools is a suspicious DNS server.
+
+- The dnstt,godoh and DNSExfiltrator directly connects to a DoH server because it supports a DoH protocol.
+
+- On the other hand, the tcp-over-dns and tuns use DoH proxy to convert conventional DNS into DoH.
+
 # References
 
 - [1] tuns https://github.com/lnussbaum/tuns
